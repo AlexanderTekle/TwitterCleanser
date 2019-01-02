@@ -1,0 +1,27 @@
+{
+  "name": "twittercleanser",
+  "version": "1.0.0",
+  "description": "Cleanse your Twitter profile of tweets that contain profanity and expletive words.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexanderTekle/TwitterCleanser.git"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "Alexander Tekle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexanderTekle/TwitterCleanser/issues"
+  },
+  "homepage": "https://github.com/AlexanderTekle/TwitterCleanser#readme"
+}
