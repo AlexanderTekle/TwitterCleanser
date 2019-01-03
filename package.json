@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/AlexanderTekle/TwitterCleanser/issues"
   },
-  "homepage": "https://github.com/AlexanderTekle/TwitterCleanser#readme"
+  "homepage": "https://github.com/AlexanderTekle/TwitterCleanser#readme",
+  "dependencies": {
+    "twit": "^2.2.11",
+    "twitt": "^1.0.0"
+  }
 }
