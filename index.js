@@ -4,29 +4,32 @@ var config = require('./config.js');
 var Twitter = new twit(config);
 
 var params = {
-  q: "from:teklecoding hey",
-  //result_type: 'recent',
-  lang: 'en'
+  screen_name: "teklecoding",
 }
 
 var cleanse = function(){
-  Twitter.get('search/tweets', params, function(err, data){
+  Twitter.get('statuses/user_timeline', params, function(err, data){
     if (!err) {
       //console.log("Hello");
-      //console.log(data);
+      //console.log(data.statuses[0]);
+      let tweets = data.filter(tweet => {
+        return (tweet.text.includes('fuck') || tweet.text.includes("shit") || tweet.text.includes("bitch"));
+      })
+      //console.log(tweets);
+
+
       var i;
-      for (i=0;i<data.statuses.length;i++) {
-        var deleteID = data.statuses[i].id_str;
+      for (i=0;i<tweets.length;i++) {
+        var deleteID = tweets[i].id_str;
         Twitter.post('statuses/destroy/:id', {
           id: deleteID
         }, function (err, data, response) {
-          if (response) {
-            console.log
-            console.log("Deleted.");
-          }
           if (err) {
             console.log("Error 1: Unsuccessful delete");
             console.log("" +err);
+          }
+          else {
+            console.log("Deleted.");
           }
         })
       }
@@ -40,6 +43,6 @@ var cleanse = function(){
 
 cleanse();
 
-params.q = "from:teklecoding hey"
-console.log(params);
-cleanse();
+//params.q = "from:teklecoding hey"
+//console.log(params);
+//cleanse();
